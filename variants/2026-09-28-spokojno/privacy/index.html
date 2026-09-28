@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fill in the Blank Generator — Privacy Policy</title>
+<style>
+  /* Политика — правда кода 28.09 (сборка 0.10.19, воркер v2.8): extension/manifest.json, sidepanel.js, panel.js, background.js,
+     backend/worker.js. Любая правка кода, что меняет данные, — правка этой страницы и вкладки Privacy в CWS. */
+  :root{ --bg:#f4efe4; --bg2:#e9e1d0; --ink:#1d1c17; --ink-dim:#6f6a5c; --blue:#2f6b8f; --green:#5fae4d; --line:#d6cfbf; }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  html{background:var(--bg2)}
+  body{
+    background:radial-gradient(130% 90% at 50% 0%, var(--bg) 0%, var(--bg2) 70%);
+    color:var(--ink); min-height:100vh;
+    font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    display:flex; flex-direction:column; align-items:center;
+    padding:clamp(28px,6vh,64px) 20px 64px;
+  }
+  main{width:100%; max-width:680px}
+  h1{display:flex; align-items:center; gap:14px; font-size:clamp(26px,4.2vw,38px); font-weight:650; letter-spacing:-.02em; margin:0 0 6px}
+  h1 img{width:38px; height:38px; flex:none}
+  .updated{color:var(--ink-dim); font-size:14px; margin:0 0 clamp(24px,4vh,36px)}
+  h2{font-size:clamp(17px,2.4vw,20px); font-weight:650; letter-spacing:-.01em; margin:32px 0 8px}
+  p{margin:0 0 12px}
+  .lead{font-size:clamp(17px,2.2vw,19px); max-width:56ch}
+  ul{margin:0 0 12px; padding:0 0 0 4px; list-style:none}
+  li{position:relative; padding:5px 0 5px 24px}
+  li::before{content:""; position:absolute; left:2px; top:14px; width:7px; height:7px; border-radius:50%; background:var(--green)}
+  a{color:var(--blue); font-weight:600; text-decoration:none}
+  a:hover{text-decoration:underline}
+  code{font:14px/1 ui-monospace,Menlo,monospace; background:#fffdf7; border:1px solid var(--line); border-radius:5px; padding:1px 5px}
+  .card{background:#fffdf7; border:1px solid var(--line); border-radius:14px; padding:14px 18px; margin:10px 0 14px}
+</style>
+</head>
+<body>
+<main>
+  <h1><img src="../icon.png" alt="">Privacy Policy</h1>
+  <p class="updated">Fill in the Blank Generator · Last updated 28 September 2026</p>
+
+  <p class="lead">Fill in the Blank Generator is a Chrome extension that turns a text into a worksheet with gaps and an answer key.
+  There is no account and no sign-up, it shows no ads, and we never sell or share your data.</p>
+
+  <h2>What stays on your device</h2>
+  <ul>
+    <li>The text you highlight on a page, paste or type, and the worksheets you make from it. A sheet in progress is kept in your
+      browser for the tab you are working in and is gone when you close the browser.</li>
+    <li>Your settings: the look of the sheet, the export format and the last choices in the Generate form. They are saved in your
+      browser’s own extension storage.</li>
+  </ul>
+
+  <h2>What is sent to our server, and why</h2>
+  <p>Only when you use one of these features, and only what the feature needs:</p>
+  <ul>
+    <li><b>Photo</b> and <b>Screenshot the page</b>: the image, so the text on it can be read and returned to your panel.</li>
+    <li><b>Use your phone</b>: the photo you take on your phone. The text read from it waits on the server for up to 10 minutes
+      until your panel picks it up, and is deleted as soon as it is picked up.</li>
+    <li><b>Generate</b>: what you ask for — the grammar point or words, level, age group, kind of text, topic and length — so a text can be written.</li>
+    <li><b>Choice</b> and <b>Word formation</b> exercises: the sentences that hold the gaps, so answer options and word roots can be found.</li>
+  </ul>
+  <div class="card">
+    Our server is a small program on <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare</a>.
+    It passes these requests to the AI provider <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic</a>
+    (Claude), which processes them to return the result. Our server does not keep your images, texts or requests, except the 10-minute
+    wait for a phone photo described above.
+  </div>
+
+  <h2>Fair-use limit and counts</h2>
+  <ul>
+    <li>The extension creates a random install number. It is sent with the requests above and is used only for a daily fair-use limit.
+      The daily count for that number is kept for up to 2 days.</li>
+    <li>The server keeps daily totals of requests — numbers only, without any content — to see how the service is used.</li>
+    <li>Cloudflare sees your IP address to deliver a request and to limit how often requests can be made. We do not store it.</li>
+  </ul>
+
+  <h2>What the extension can see</h2>
+  <p>The extension works only on the tab where you click its icon, and only after you click it: it has no permission to read all
+  websites. On that page it reads only what you highlight, or the whole page when you click <b>Whole page</b>, or a picture of what you
+  see when you click <b>Screenshot the page</b>. It does not collect your browsing history, and there is no analytics or tracking in the extension.</p>
+  <p>Permissions, and what each is for:</p>
+  <ul>
+    <li><code>activeTab</code> and <code>scripting</code> — to work on the tab where you clicked the icon: the marker, Whole page and Screenshot the page.</li>
+    <li><code>sidePanel</code> — to open the extension next to the page.</li>
+    <li><code>storage</code> — to keep your sheet in progress and your settings in your browser.</li>
+    <li>Optional access to <code>newsinlevels.com</code>, <code>learningenglish.voanews.com</code> and <code>simple.wikipedia.org</code> —
+      asked only when you first open one of them with <b>Find an article</b>, so the marker can start there by itself.</li>
+  </ul>
+
+  <h2>Chrome Web Store policy</h2>
+  <p>The use of information by Fill in the Blank Generator complies with the Chrome Web Store User Data Policy, including the Limited Use requirements.</p>
+
+  <h2>Changes and contact</h2>
+  <p>If what the extension does with data changes, this page will change first, with a new date at the top.
+  Questions: <a href="mailto:hello@fanarlabs.com">hello@fanarlabs.com</a>.</p>
+</main>
+</body>
+</html>

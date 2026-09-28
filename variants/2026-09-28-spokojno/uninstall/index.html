@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fill in the Blank Generator was removed</title>
+<style>
+  /* Канон 5.1: страница после удаления — один вопрос «почему удалили» (Google-форма), чем проще, тем больше ответов (5–15 %).
+     Палитра продукта, как на welcome. */
+  :root{ --bg:#f4efe4; --bg2:#e9e1d0; --ink:#1d1c17; --ink-dim:#6f6a5c; --blue:#2f6b8f; --step:#c46f4c; }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  html{background:var(--bg2)}
+  body{
+    background:radial-gradient(130% 90% at 50% 0%, var(--bg) 0%, var(--bg2) 70%);
+    color:var(--ink);
+    font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    padding:clamp(28px,6vh,64px) 20px 56px;
+  }
+  h1{
+    display:flex; align-items:center; gap:14px;
+    font-size:clamp(26px,4vw,38px); font-weight:650; letter-spacing:-.02em;
+    margin:0 0 12px; text-align:center;
+  }
+  h1 img{width:40px; height:40px; flex:none; filter:grayscale(.6); opacity:.8}
+  .say{
+    margin:0 0 clamp(22px,3.5vh,34px); text-align:center;
+    font-size:clamp(15px,2vw,18px); color:var(--ink-dim); max-width:48ch;
+  }
+  .say b{color:var(--ink); font-weight:600}
+  .card{
+    width:100%; max-width:640px; background:#fffdf7;
+    border:1px solid #d6cfbf; border-radius:16px; padding:18px; box-shadow:0 2px 0 #d9ceb6;
+  }
+  .card iframe{ display:block; width:100%; height:520px; border:none; border-radius:10px; background:transparent; }
+  .fallback{ text-align:center; color:var(--ink-dim); font-size:16px; padding:22px 10px; }
+  .fallback a{ color:var(--blue); font-weight:600; text-decoration:none; }
+  .fallback a:hover{ text-decoration:underline; }
+  .back{ margin-top:22px; font-size:14px; color:var(--ink-dim); text-align:center; }
+  .back a{ color:var(--blue); text-decoration:none; font-weight:600; }
+  .back a:hover{ text-decoration:underline; }
+</style>
+</head>
+<body>
+
+  <h1><img src="../icon.png" alt="">Fill in the Blank Generator was removed</h1>
+  <p class="say">Thank you for trying it. What made you remove it? One line helps us make the next worksheet better for the next teacher.</p>
+
+  <div class="card">
+    <iframe id="form" loading="lazy" title="Why did you remove Fill in the Blank Generator?">Loading…</iframe>
+    <div class="fallback" id="fallback" hidden>
+      Tell us in one line: <a href="mailto:hello@fanarlabs.com?subject=Why%20I%20removed%20Fill%20in%20the%20Blank%20Generator">hello@fanarlabs.com</a>
+    </div>
+  </div>
+
+  <p class="back" id="back" hidden>
+    Removed it by mistake? <a id="storelink" href="#" target="_blank" rel="noopener">Install Fill in the Blank Generator again</a>
+  </p>
+
+  <script>
+    // Форма — Google Forms с одним вопросом (канон 5.1), создаёт автор: вписать ссылку «…/viewform?embedded=true».
+    // Ссылка на стор — после публикации.
+    const FORM_URL  = '';
+    const STORE_URL = '';   // https://chromewebstore.google.com/detail/<id>
+    const f = document.getElementById('form');
+    if (FORM_URL) { f.src = FORM_URL; }
+    else { f.remove(); document.getElementById('fallback').hidden = false; }
+    if (STORE_URL) {
+      document.getElementById('storelink').href = STORE_URL;
+      document.getElementById('back').hidden = false;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fill in the Blank Generator was removed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+
+<style>
+  /* Канон 5.1: страница после удаления — один вопрос «почему удалили» (Google-форма), чем проще, тем больше ответов (5–15 %).
+     Палитра продукта, как на welcome. */
+  :root{ --bg:#f4efe4; --bg2:#e9e1d0; --ink:#1d1c17; --ink-dim:#6f6a5c; --blue:#2f6b8f; --step:#c46f4c; }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  html{background:var(--bg2)}
+  body{
+    background:radial-gradient(130% 90% at 50% 0%, var(--bg) 0%, var(--bg2) 70%);
+    color:var(--ink);
+    font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    padding:clamp(28px,6vh,64px) 20px 56px;
+  }
+  h1{
+    display:flex; align-items:center; gap:14px;
+    font-size:clamp(26px,4vw,38px); font-weight:650; letter-spacing:-.02em;
+    margin:0 0 12px; text-align:center;
+  }
+  h1 img{width:40px; height:40px; flex:none; filter:grayscale(.6); opacity:.8}
+  .say{
+    margin:0 0 clamp(22px,3.5vh,34px); text-align:center;
+    font-size:clamp(15px,2vw,18px); color:var(--ink-dim); max-width:48ch;
+  }
+  .say b{color:var(--ink); font-weight:600}
+  .card{
+    width:100%; max-width:640px; background:#fffdf7;
+    border:1px solid #d6cfbf; border-radius:16px; padding:18px; box-shadow:0 2px 0 #d9ceb6;
+  }
+  .card iframe{ display:block; width:100%; height:520px; border:none; border-radius:10px; background:transparent; }
+  .fallback{ text-align:center; color:var(--ink-dim); font-size:16px; padding:22px 10px; }
+  .fallback a{ color:var(--blue); font-weight:600; text-decoration:none; }
+  .fallback a:hover{ text-decoration:underline; }
+  .back{ margin-top:22px; font-size:14px; color:var(--ink-dim); text-align:center; }
+  .back a{ color:var(--blue); text-decoration:none; font-weight:600; }
+  .back a:hover{ text-decoration:underline; }
+
+  /* «мультяшнее» (слово автора 28.09 — для всех страниц): круглый шрифт, чернильная обводка, тень-наклейка, каракули по полям */
+  body{font-family:Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+  h1,h2{font-family:Fredoka,Nunito,sans-serif}
+  h1{font-weight:700;letter-spacing:-.01em}
+  h1 img{transform:rotate(-8deg);filter:drop-shadow(3px 3px 0 #1d1c17)}
+  .doodles{position:fixed;inset:0;pointer-events:none;z-index:0}
+  .doodles svg{position:absolute;color:#c9bca3}
+  @media (max-width:1100px){.doodles{display:none}}
+  h1 img{filter:grayscale(.5) drop-shadow(3px 3px 0 #1d1c17);opacity:.9}
+  .say{font-weight:700;color:#4f4b40}
+  .card{border:3px solid #1d1c17;border-radius:20px;box-shadow:7px 7px 0 #1d1c17;transform:rotate(-.5deg);position:relative;z-index:1}
+  h1,.say,.back{position:relative;z-index:1}
+  .fallback{font-weight:700}
+</style>
+</head>
+<body>
+  <div class="doodles" aria-hidden="true">
+    <svg style="left:5%;top:16%;transform:rotate(-14deg)" width="84" height="84" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 52l6-18 26-26 12 12-26 26z"/><path d="M38 14l12 12"/><path d="M12 52l12-4"/></svg>
+    <svg style="right:6%;top:14%;transform:rotate(12deg)" width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"><path d="M32 6l7 17 18 1-14 11 5 18-16-10-16 10 5-18L7 24l18-1z"/></svg>
+    <svg style="right:8%;bottom:12%;transform:rotate(-8deg)" width="110" height="46" viewBox="0 0 120 50" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M4 30h22"/><path d="M34 34h44" stroke-width="3.5"/><path d="M86 30h28"/><text x="44" y="24" font-family="Fredoka,sans-serif" font-size="14" fill="currentColor" stroke="none">(1)</text></svg>
+    <svg style="left:7%;bottom:14%;transform:rotate(6deg)" width="80" height="50" viewBox="0 0 80 50" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M4 30c10-20 20 20 30 0s20 20 30 0 10-10 12-6"/></svg>
+  </div>
+
+  <h1><img src="../icon.png" alt="">Fill in the Blank Generator was removed</h1>
+  <p class="say">Thank you for trying it. What made you remove it? One line helps us make the next worksheet better for the next teacher.</p>
+
+  <div class="card">
+    <iframe id="form" loading="lazy" title="Why did you remove Fill in the Blank Generator?">Loading…</iframe>
+    <div class="fallback" id="fallback" hidden>
+      Tell us in one line: <a href="mailto:hello@fanarlabs.com?subject=Why%20I%20removed%20Fill%20in%20the%20Blank%20Generator">hello@fanarlabs.com</a>
+    </div>
+  </div>
+
+  <p class="back" id="back" hidden>
+    Removed it by mistake? <a id="storelink" href="#" target="_blank" rel="noopener">Install Fill in the Blank Generator again</a>
+  </p>
+
+  <script>
+    // Форма — Google Forms с одним вопросом (канон 5.1), создаёт автор: вписать ссылку «…/viewform?embedded=true».
+    // Ссылка на стор — после публикации.
+    const FORM_URL  = 'https://docs.google.com/forms/d/e/1FAIpQLSc4ou2bpU8mQAlObFeI82ME1bx2R5lnGUvDrg5iA23FptcdJw/viewform?embedded=true';   // форма автора 28.09 (forms.gle/bNm9v7b1TUA9UaML6)
+    const STORE_URL = '';   // https://chromewebstore.google.com/detail/<id>
+    const f = document.getElementById('form');
+    if (FORM_URL) { f.src = FORM_URL; }
+    else { f.remove(); document.getElementById('fallback').hidden = false; }
+    if (STORE_URL) {
+      document.getElementById('storelink').href = STORE_URL;
+      document.getElementById('back').hidden = false;
+    }
+  </script>
+</body>
+</html>

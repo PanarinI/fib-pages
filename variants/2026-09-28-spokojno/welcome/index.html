@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fill in the Blank Generator is installed</title>
+<style>
+  /* Палитра — «спокойный класс» продукта (fill-in-the-blanks/dizajn/KOD.md): лён, тёмные чернила, синий знак иконки,
+     зелёный маркера; номера шагов — терракота (главное действие). Устройство — как у focus-pages/welcome (канон 3.2):
+     кадр «как закрепить» + кадр «как открыть», номера прямо на цели. */
+  :root{ --bg:#f4efe4; --bg2:#e9e1d0; --ink:#1d1c17; --ink-dim:#6f6a5c; --blue:#2f6b8f; --green:#76d662; --step:#c46f4c; }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  html{background:var(--bg2)}
+  body{
+    min-height:100vh;
+    background:radial-gradient(130% 90% at 50% 0%, var(--bg) 0%, var(--bg2) 70%);
+    color:var(--ink);
+    font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    display:flex; flex-direction:column; align-items:center;
+    padding:clamp(28px,6vh,64px) 20px 56px;
+  }
+  h1{
+    display:flex; align-items:center; gap:16px;
+    font-size:clamp(28px,4.4vw,42px); font-weight:650;
+    letter-spacing:-.02em; margin:0 0 14px; text-align:center;
+  }
+  h1 img{width:44px; height:44px; flex:none}
+  .say{
+    margin:0 0 clamp(26px,4vh,40px); text-align:center;
+    font-size:clamp(16px,2.1vw,20px); color:var(--ink-dim); max-width:48ch;
+  }
+  .say b{color:var(--step); font-weight:700}
+  .shot{width:100%; max-width:940px; height:auto; display:block}
+  #confetti{position:fixed; inset:0; width:100%; height:100%; pointer-events:none; z-index:9}
+  .say2{margin-top:26px}
+  .after{
+    margin:clamp(26px,4vh,40px) 0 0; text-align:center;
+    font-size:clamp(16px,2.1vw,19px); max-width:46ch;
+  }
+</style>
+
+  <!-- Счётчик установок (канон 3.2: страница открывается один раз после установки). GA4-ресурс создаёт автор — тогда вписать
+       его номер в GA_ID; пока пусто, ничего не грузится и ничего не считается. -->
+  <script>
+    const GA_ID = '';
+    if (GA_ID) {
+      const s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { dataLayer.push(arguments); };
+      gtag('js', new Date()); gtag('config', GA_ID); gtag('event', 'install_welcome');
+    }
+  </script>
+</head>
+<body>
+
+  <canvas id="confetti" aria-hidden="true"></canvas>
+  <h1><img src="../icon.png" alt="">Fill in the Blank Generator is installed</h1>
+
+  <p class="say">Click the puzzle piece <b>(1)</b> in the top right of your browser, then click the pin <b>(2)</b> next to Fill in the Blank Generator:</p>
+
+  <!-- Кадр 1: окно Chrome, пазл и меню расширений. Пазл — глиф Material Symbols «extension» без нижней выемки (сверено автором
+       на живом Chrome для focus-pages 09-02); порядок справа: пазл → разделитель → аватар → ⋮. -->
+  <svg class="shot" viewBox="-8 -36 1024 448" xmlns="http://www.w3.org/2000/svg" role="img"
+       aria-label="Chrome toolbar: click the puzzle piece, then the pin next to Fill in the Blank Generator">
+    <defs>
+      <filter id="drop" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#000" flood-opacity=".22"/></filter>
+    </defs>
+    <g filter="url(#drop)">
+      <rect x="16" y="16" width="968" height="360" rx="13" fill="#ffffff"/>
+      <path d="M16 29a13 13 0 0 1 13-13h942a13 13 0 0 1 13 13v33H16Z" fill="#dee1e6"/>
+      <rect x="36" y="26" width="215" height="36" rx="9" fill="#fff"/>
+      <path d="M233 39l10 10M243 39l-10 10" stroke="#5f6368" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+      <rect x="16" y="62" width="968" height="46" fill="#fff"/>
+      <g stroke="#5f6368" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M44 85h13M44 85l4.6-4.6M44 85l4.6 4.6"/>
+        <path d="M92 85h-13M92 85l-4.6-4.6M92 85l-4.6 4.6" opacity=".38"/>
+        <path d="M122.65 79.54A6.3 6.3 0 1 1 116.35 79.54"/>
+        <path d="M116.35 79.54L113.65 79.63M116.35 79.54L114.92 81.83"/>
+      </g>
+      <rect x="152" y="72" width="380" height="27" rx="13.5" fill="#f1f3f4"/>
+      <g fill="#9aa0a6" opacity=".38"><circle cx="566" cy="85" r="9"/><circle cx="598" cy="85" r="9"/><circle cx="630" cy="85" r="9"/></g>
+      <g fill="#5f6368">
+        <path transform="translate(689.6,94.3) scale(0.0195)" fill="#5f6368"
+              d="M720-120H200q-33 0-56.5-23.5T120-200v-152q48 0 84-30.5t36-77.5q0-47-36-77.5T120-568v-152q0-33 23.5-56.5T200-800h160q0-42 29-71t71-29q42 0 71 29t29 71h160q33 0 56.5 23.5T800-720v160q42 0 71 29t29 71q0 42-29 71t-71 29v160q0 33-23.5 56.5T720-120Zm-520-80h520v-240h80q8 0 14-6t6-14q0-8-6-14t-14-6h-80v-240H480v-80q0-8-6-14t-14-6q-8 0-14 6t-6 14v80H200v88q54 20 87 67t33 105q0 57-33 104t-87 68v88Z"/>
+        <line x1="752" y1="74" x2="752" y2="96" stroke="#dadce0" stroke-width="1.6"/>
+        <circle cx="790" cy="85" r="11" fill="#5f6368" opacity=".85"/>
+        <circle cx="828" cy="78.5" r="1.9"/><circle cx="828" cy="85" r="1.9"/><circle cx="828" cy="91.5" r="1.9"/>
+      </g>
+      <g>
+        <rect x="600" y="120" width="336" height="176" rx="11" fill="#fff" filter="url(#drop)"/>
+        <text x="622" y="150" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="16" fill="#202124">Extensions</text>
+        <path d="M905 137l14 14M919 137l-14 14" stroke="#5f6368" stroke-width="1.7" stroke-linecap="round"/>
+        <text x="622" y="180" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="12.5" font-weight="600" fill="#202124">No access needed</text>
+        <text x="622" y="199" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="11.5" fill="#5f6368">These extensions don’t need to see and change</text>
+        <text x="622" y="214" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="11.5" fill="#5f6368">information on this site.</text>
+        <image href="../icon.png" x="621" y="233" width="20" height="20"/>
+        <text x="652" y="248" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="13.5" fill="#202124">Fill in the Blank Generator</text>
+        <path d="M885 235h10l-1.3 8.6 5 5.2v2.6h-17.4v-2.6l5-5.2L885 235Z" fill="none" stroke="#3c4043" stroke-width="1.7" stroke-linejoin="round"/>
+        <path d="M890 251.4V259" stroke="#3c4043" stroke-width="1.7" stroke-linecap="round"/>
+        <line x1="616" y1="270" x2="920" y2="270" stroke="#e8eaed" stroke-width="1.4"/>
+        <g transform="translate(623,277)" stroke="#5f6368" fill="none" stroke-linecap="round">
+          <circle cx="8" cy="8" r="4.1" stroke-width="1.5"/>
+          <path d="M8 2.5v1.5M8 12v1.5M2.5 8h1.5M12 8h1.5M4.2 4.2l1.1 1.1M10.7 10.7l1.1 1.1M11.8 4.2l-1.1 1.1M5.3 10.7l-1.1 1.1" stroke-width="2.1"/>
+        </g>
+        <text x="652" y="290" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" fill="#3c4043">Manage Extensions</text>
+      </g>
+    </g>
+    <circle cx="699" cy="85" r="19" fill="none" stroke="#c46f4c" stroke-width="4.2"/>
+    <path d="M 572.4 28.0 L 655.9 62.3 L 650.1 75.6 L 687.0 71.0 L 665.3 40.8 L 659.5 54.1 L 577.6 16.0 Z" fill="#c46f4c"/>
+    <circle cx="543" cy="14" r="27" fill="#c46f4c" stroke="#fff" stroke-width="2.5"/>
+    <text x="543" y="24" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="29" font-weight="700" fill="#fff">1</text>
+    <circle cx="889" cy="245" r="21" fill="none" stroke="#c46f4c" stroke-width="4.2"/>
+    <path d="M 960.6 307.4 L 929.8 279.4 L 940.1 269.2 L 904.0 260.0 L 913.2 296.1 L 923.4 285.8 L 951.4 316.6 Z" fill="#c46f4c"/>
+    <circle cx="976" cy="332" r="27" fill="#c46f4c" stroke="#fff" stroke-width="2.5"/>
+    <text x="976" y="342" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="29" font-weight="700" fill="#fff">2</text>
+  </svg>
+
+  <p class="say say2">Then open it <b>(3)</b> on a page with a text — it opens in the side panel. Highlight a paragraph, and it lands in the sheet:</p>
+
+  <!-- Кадр 2: закреплённая иконка, статья с выделенным абзацем (зелёный маркер) и настоящая боковая панель с листом
+       (panel.png — снимок стенда sidepanel-test.html?tab=5&draft=1, 28.09). -->
+  <svg class="shot" viewBox="-8 -36 1024 640" xmlns="http://www.w3.org/2000/svg" role="img"
+       aria-label="Click the pinned Fill in the Blank Generator icon, highlight a paragraph on the page, and it lands in the side panel">
+    <defs>
+      <filter id="drop2" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#000" flood-opacity=".22"/></filter>
+      <clipPath id="win2"><rect x="16" y="16" width="968" height="552" rx="13"/></clipPath>
+    </defs>
+    <g filter="url(#drop2)">
+      <rect x="16" y="16" width="968" height="552" rx="13" fill="#ffffff"/>
+      <path d="M16 29a13 13 0 0 1 13-13h942a13 13 0 0 1 13 13v33H16Z" fill="#dee1e6"/>
+      <rect x="36" y="26" width="215" height="36" rx="9" fill="#fff"/>
+      <path d="M233 39l10 10M243 39l-10 10" stroke="#5f6368" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+      <rect x="16" y="62" width="968" height="46" fill="#fff"/>
+      <g stroke="#5f6368" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M44 85h13M44 85l4.6-4.6M44 85l4.6 4.6"/>
+        <path d="M92 85h-13M92 85l-4.6-4.6M92 85l-4.6 4.6" opacity=".38"/>
+        <path d="M122.65 79.54A6.3 6.3 0 1 1 116.35 79.54"/>
+        <path d="M116.35 79.54L113.65 79.63M116.35 79.54L114.92 81.83"/>
+      </g>
+      <rect x="152" y="72" width="380" height="27" rx="13.5" fill="#f1f3f4"/>
+      <g fill="#9aa0a6" opacity=".38"><circle cx="559" cy="85" r="9"/><circle cx="591" cy="85" r="9"/><circle cx="623" cy="85" r="9"/></g>
+      <image href="../icon.png" x="645" y="75" width="20" height="20"/>
+      <g fill="#5f6368">
+        <path transform="translate(689.6,94.3) scale(0.0195)" fill="#5f6368"
+              d="M720-120H200q-33 0-56.5-23.5T120-200v-152q48 0 84-30.5t36-77.5q0-47-36-77.5T120-568v-152q0-33 23.5-56.5T200-800h160q0-42 29-71t71-29q42 0 71 29t29 71h160q33 0 56.5 23.5T800-720v160q42 0 71 29t29 71q0 42-29 71t-71 29v160q0 33-23.5 56.5T720-120Zm-520-80h520v-240h80q8 0 14-6t6-14q0-8-6-14t-14-6h-80v-240H480v-80q0-8-6-14t-14-6q-8 0-14 6t-6 14v80H200v88q54 20 87 67t33 105q0 57-33 104t-87 68v88Z"/>
+        <line x1="752" y1="74" x2="752" y2="96" stroke="#dadce0" stroke-width="1.6"/>
+        <circle cx="790" cy="85" r="11" fill="#5f6368" opacity=".85"/>
+        <circle cx="828" cy="78.5" r="1.9"/><circle cx="828" cy="85" r="1.9"/><circle cx="828" cy="91.5" r="1.9"/>
+      </g>
+      <!-- статья: выделенный абзац — тем же зелёным, что маркер на странице -->
+      <g font-family="Georgia,serif" fill="#222">
+        <text x="96" y="168" font-size="26" font-weight="700">My City Has Changed</text>
+        <text x="96" y="192" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="12" fill="#888">Reading · A2</text>
+        <rect x="92" y="216" width="540" height="24" fill="#76d662" opacity=".45"/>
+        <rect x="92" y="244" width="540" height="24" fill="#76d662" opacity=".45"/>
+        <rect x="92" y="272" width="560" height="24" fill="#76d662" opacity=".45"/>
+        <text x="96" y="234" font-size="16">My city has changed a lot since I was a child. When I was</text>
+        <text x="96" y="262" font-size="16">young, people bought food at the market. Now there are</text>
+        <text x="96" y="290" font-size="16">modern buildings everywhere, and the old houses have disappeared.</text>
+        <g fill="#d6d3cc"><rect x="96" y="330" width="520" height="9" rx="4.5"/><rect x="96" y="352" width="490" height="9" rx="4.5"/><rect x="96" y="374" width="530" height="9" rx="4.5"/>
+          <rect x="96" y="396" width="300" height="9" rx="4.5"/><rect x="96" y="436" width="510" height="9" rx="4.5"/><rect x="96" y="458" width="470" height="9" rx="4.5"/><rect x="96" y="480" width="360" height="9" rx="4.5"/></g>
+      </g>
+      <g clip-path="url(#win2)">
+        <rect x="716" y="108" width="268" height="460" fill="#e7e0d0"/>
+        <image href="panel.png" x="716" y="108" width="268" height="460" preserveAspectRatio="xMidYMin slice"/>
+      </g>
+      <rect x="716" y="108" width="1.4" height="460" fill="#dadce0"/>
+    </g>
+    <circle cx="655" cy="85" r="19" fill="none" stroke="#c46f4c" stroke-width="4.2"/>
+    <path d="M 528.4 28.0 L 611.9 62.3 L 606.1 75.6 L 643.0 71.0 L 621.3 40.8 L 615.5 54.1 L 533.6 16.0 Z" fill="#c46f4c"/>
+    <circle cx="499" cy="14" r="27" fill="#c46f4c" stroke="#fff" stroke-width="2.5"/>
+    <text x="499" y="24" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="29" font-weight="700" fill="#fff">3</text>
+  </svg>
+
+  <p class="after">That’s it. Click a word to turn it into a gap, then download the PDF: the sheet and its answer key.</p>
+
+<script>
+// Салют — один раз при открытии (как на focus-pages и ExportGPT); цвета продукта: синий знак, зелёный маркер, терракота, крем.
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const cv = document.getElementById('confetti'); if (!cv) return;
+  const x = cv.getContext('2d');
+  const dpr = Math.min(2, window.devicePixelRatio || 1);
+  function size() { cv.width = innerWidth * dpr; cv.height = innerHeight * dpr; x.setTransform(dpr,0,0,dpr,0,0); }
+  size(); addEventListener('resize', size);
+  const COLORS = ['#2f6b8f','#5b93b5','#76d662','#a8e59b','#c46f4c','#e8b49c','#f1eadc'];
+  const P = [];
+  for (let i = 0; i < 130; i++) P.push({
+    x: Math.random() * innerWidth, y: -20 - Math.random() * 340,
+    w: 7 + Math.random() * 8, h: 3.5 + Math.random() * 5,
+    c: COLORS[(Math.random() * COLORS.length) | 0],
+    a: Math.random() * Math.PI * 2, spin: (Math.random() - 0.5) * 0.18,
+    vx: (Math.random() - 0.5) * 2.6, vy: 2.4 + Math.random() * 3.4,
+    o: 1, delay: Math.random() * 60,
+  });
+  let f = 0;
+  (function draw() {
+    x.clearRect(0, 0, innerWidth, innerHeight);
+    let alive = 0;
+    for (const p of P) {
+      if (f < p.delay) { alive++; continue; }
+      p.x += p.vx; p.y += p.vy; p.vy += 0.07; p.a += p.spin;
+      if (p.y > innerHeight * 0.8) p.o -= 0.032;
+      if (p.o <= 0) continue;
+      alive++;
+      x.save(); x.globalAlpha = Math.max(0, p.o);
+      x.translate(p.x, p.y); x.rotate(p.a);
+      x.fillStyle = p.c; x.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+      x.restore();
+    }
+    f++;
+    if (alive > 0 || f < 80) requestAnimationFrame(draw);
+    else { x.clearRect(0, 0, innerWidth, innerHeight); cv.remove(); }
+  })();
+})();
+</script>
+</body>
+</html>
