@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
 
 <style>
-  /* Политика — правда кода 29.09 (сборка 1.0.0, воркер v2.9 — лимиты деньгами, отпечаток адреса; было 28.09: 0.10.19, v2.8): extension/manifest.json, sidepanel.js, panel.js, background.js,
+  /* Политика — правда кода 28.09 (сборка 0.10.19, воркер v2.8): extension/manifest.json, sidepanel.js, panel.js, background.js,
      backend/worker.js. Любая правка кода, что меняет данные, — правка этой страницы и вкладки Privacy в CWS. */
   :root{ --bg:#f4efe4; --bg2:#e9e1d0; --ink:#1d1c17; --ink-dim:#6f6a5c; --blue:#2f6b8f; --green:#5fae4d; --line:#d6cfbf; }
   *{box-sizing:border-box}
@@ -62,7 +62,7 @@
   </div>
 <main>
   <h1><img src="../icon.png" alt="">Privacy Policy</h1>
-  <p class="updated">Fill in the Blank Generator · Last updated 29 September 2026</p>
+  <p class="updated">Fill in the Blank Generator · Last updated 28 September 2026</p>
 
   <p class="lead">Fill in the Blank Generator is a Chrome extension that turns a text into a worksheet with gaps and an answer key.
   There is no account and no sign-up, it shows no ads, and we never sell or share your data.</p>
@@ -93,12 +93,10 @@
 
   <h2>Fair-use limit and counts</h2>
   <ul>
-    <li>The extension creates a random install number. It is sent with the requests above and is used only for a daily fair-use limit:
-      the server adds up the cost of that number’s AI requests for the day and keeps the sum for up to 2 days.</li>
-    <li>The server keeps daily totals — how many requests of each kind and what they cost, without any content — to see how the service is used.</li>
-    <li>Cloudflare sees your IP address to deliver a request and limits how many requests one address can send in a few seconds.
-      To stop abuse, the server keeps a one-way fingerprint of the address — it cannot be turned back into the address — with that
-      day’s usage, for up to 2 days. The address itself is not stored.</li>
+    <li>The extension creates a random install number. It is sent with the requests above and is used only for a daily fair-use limit.
+      The daily count for that number is kept for up to 2 days.</li>
+    <li>The server keeps daily totals of requests — numbers only, without any content — to see how the service is used.</li>
+    <li>Cloudflare sees your IP address to deliver a request and to limit how often requests can be made. We do not store it.</li>
   </ul>
 
   <h2>What the extension can see</h2>
