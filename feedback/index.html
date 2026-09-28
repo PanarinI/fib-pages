@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Fill in the Blank Generator was removed</title>
+<title>Fill in the Blank Generator — what went wrong?</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
 
@@ -77,7 +77,7 @@
     <svg style="left:7%;bottom:14%;transform:rotate(6deg)" width="80" height="50" viewBox="0 0 80 50" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M4 30c10-20 20 20 30 0s20 20 30 0 10-10 12-6"/></svg>
   </div>
 
-  <p class="removed"><img src="../icon.png" alt="">Fill in the Blank Generator was removed</p>
+  <p class="removed"><img src="../icon.png" alt="">Sorry about that.</p>
   <h1 id="q">What went wrong?</h1>
 
   <div class="sticker"><div class="card">
@@ -92,10 +92,6 @@
     It didn’t go through. <a id="mail" href="#">Send it by email instead</a> — your text is already filled in.
   </p>
 
-  <p class="back" id="back" hidden>
-    Removed it by mistake? <a id="storelink" href="#" target="_blank" rel="noopener">Install Fill in the Blank Generator again</a>
-  </p>
-
   <script>
     // Ответ уходит в Google-форму автора напрямую (formResponse) — те же ответы, та же таблица, без интерфейса формы
     // (форма автора 28.09, forms.gle/bNm9v7b1TUA9UaML6). ENTRY — номер поля «What went wrong?»; сверен 28.09 подстановкой
@@ -105,10 +101,11 @@
     const ENTRY     = 'entry.566431948';
     // откуда ответ — пометкой в начале того же ответа: «[uninstall] …» / «[rating 2★] …» (одна таблица на продукт;
     // второго вопроса в форме нет — слово автора 28.09)
-    const SOURCE    = 'uninstall';
+    // звёзды приходят из расширения: …/feedback/?stars=2 (оценка 1–3★ — «Rate us» после второго скачивания, 28.09)
+    const STARS     = +new URLSearchParams(location.search).get('stars');
+    const SOURCE    = STARS >= 1 && STARS <= 5 ? `rating ${STARS}★` : 'rating';
     const EMAIL     = 'hello@fanarlabs.com';   // тот же адрес, что в политике приватности продукта
-    const SUBJECT   = 'Why I removed Fill in the Blank Generator';
-    const STORE_URL = '';   // после публикации: https://chromewebstore.google.com/detail/<id>
+    const SUBJECT   = 'Fill in the Blank Generator — what went wrong';
 
     const form = document.getElementById('ask'), ta = document.getElementById('answer'), send = document.getElementById('send');
     let sending = false;
@@ -143,10 +140,6 @@
     document.getElementById('mail').addEventListener('click', e => {
       e.currentTarget.href = `mailto:${EMAIL}?subject=${encodeURIComponent(SUBJECT)}&body=${encodeURIComponent(ta.value.trim())}`;
     });
-    if (STORE_URL) {
-      document.getElementById('storelink').href = STORE_URL;
-      document.getElementById('back').hidden = false;
-    }
   </script>
 </body>
 </html>
