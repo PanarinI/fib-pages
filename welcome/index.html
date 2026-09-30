@@ -56,18 +56,11 @@
   @media (max-width:1100px){.doodles{display:none}}
 </style>
 
-  <!-- Счётчик установок (канон 3.2: страница открывается один раз после установки). GA4-ресурс создаёт автор — тогда вписать
-       его номер в GA_ID; пока пусто, ничего не грузится и ничего не считается. -->
-  <script>
-    const GA_ID = '';
-    if (GA_ID) {
-      const s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-      document.head.appendChild(s);
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function () { dataLayer.push(arguments); };
-      gtag('js', new Date()); gtag('config', GA_ID); gtag('event', 'install_welcome');
-    }
-  </script>
+  <!-- Umami (автор 29.09): один сайт на все страницы fib-pages — отчёт Pages делит по адресу. Без куки, баннер согласия не нужен.
+       data-domains — считать только живой адрес (локальные просмотры и стенды не считаются).
+       Уникальный заход сюда ≈ установка (канон 4.5; у ExportGPT 0,90 от кабинета) — установки в реальном времени. GA4 на страницах нет:
+       события (установка, лист, оценка) шлёт само расширение с 1.0.1 (решение 29.09). -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="8e6299ac-e25b-4cae-90bd-f55cb4569afe" data-domains="panarini.github.io"></script>
 </head>
 <body>
 

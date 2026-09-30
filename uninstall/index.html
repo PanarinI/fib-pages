@@ -68,6 +68,11 @@
   @media (max-width:420px){ .removed{flex-direction:column; gap:6px} }
   .back{margin-top:30px; font-size:14px; color:var(--ink-dim); text-align:center}
 </style>
+  <!-- Umami (автор 29.09): один сайт на все страницы fib-pages — отчёт Pages делит по адресу. Без куки, баннер согласия не нужен.
+       data-domains — считать только живой адрес (локальные просмотры и стенды не считаются).
+       Хвост адреса пишем: с 1.0.1 расширение кладёт в него, сколько листов успели сделать (?sheets=0|1|2-5|6+) — Umami → Query
+       parameters покажет «удалили, не сделав ни одного листа» против «сделали и ушли». Номера человека в адресе нет. -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="8e6299ac-e25b-4cae-90bd-f55cb4569afe" data-domains="panarini.github.io"></script>
 </head>
 <body>
   <div class="doodles" aria-hidden="true">
@@ -105,10 +110,14 @@
     const ENTRY     = 'entry.566431948';
     // откуда ответ — пометкой в начале того же ответа: «[uninstall] …» / «[rating 2★] …» (одна таблица на продукт;
     // второго вопроса в форме нет — слово автора 28.09)
-    const SOURCE    = 'uninstall';
+    // с 1.0.1 расширение кладёт в адрес грубый счёт своих листов (?sheets=0|1|2-5|6+, background.js) — пометкой в ответ формы:
+    // «почему удалил» рядом с «успел ли попробовать» (слово автора 29.09). Без параметра (1.0.0) — как было
+    const SHEETS    = (new URLSearchParams(location.search).get('sheets') || '').match(/^(0|1|2-5|6\+)$/);
+    const SOURCE    = 'uninstall' + (SHEETS ? ' · ' + SHEETS[1] + (SHEETS[1] === '1' ? ' sheet' : ' sheets') : '');
     const EMAIL     = 'hello@fanarlabs.com';   // тот же адрес, что в политике приватности продукта
     const SUBJECT   = 'Why I removed Fill in the Blank Generator';
-    const STORE_URL = '';   // после публикации: https://chromewebstore.google.com/detail/<id>
+    // ID расширения — из кабинета CWS (автор 29.09); до публикации стор отвечает «empty-title», страница удаления до неё и не открывается
+    const STORE_URL = 'https://chromewebstore.google.com/detail/cogjebcdchokgfhdbagcgkfeblacndci?utm_source=uninstall_page';
 
     const form = document.getElementById('ask'), ta = document.getElementById('answer'), send = document.getElementById('send');
     let sending = false;
