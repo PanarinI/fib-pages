@@ -62,7 +62,7 @@
   </div>
 <main>
   <h1><img src="../icon.png" alt="">Privacy Policy</h1>
-  <p class="updated">Fill in the Blank Generator · Last updated 30 September 2026</p>
+  <p class="updated">Fill in the Blank Generator · Last updated 5 October 2026</p>
 
   <p class="lead">Fill in the Blank Generator is a Chrome extension that turns a text into a worksheet with gaps and an answer key.
   There is no account and no sign-up, it shows no ads, and we never sell or share your data.</p>
@@ -83,12 +83,16 @@
       until your panel picks it up, and is deleted as soon as it is picked up.</li>
     <li><b>Generate</b>: what you ask for — the grammar point or words, level, age group, kind of text, topic and length — so a text can be written.</li>
     <li><b>Choice</b> and <b>Word formation</b> exercises: the sentences that hold the gaps, so answer options and word roots can be found.</li>
+    <li><b>Find an article</b>: the topic you type and your browser’s language. Our server looks the topic up (not with AI) on Simple English
+      Wikipedia, English Wikipedia, Wikijunior, Wikinews, Wikivoyage, News in Levels and Global Voices; if you type it in another language,
+      it first asks the Wikipedia in that language for the English title. Results for a topic are cached for up to 12 hours, without your
+      install number or address. If our server can’t be reached, your browser asks Simple English Wikipedia directly.</li>
   </ul>
   <div class="card">
     Our server is a small program on <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare</a>.
-    It passes these requests to the AI provider <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic</a>
+    It passes these requests, except Find an article, to the AI provider <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic</a>
     (Claude), which processes them to return the result. Our server does not keep your images, texts or requests, except the 10-minute
-    wait for a phone photo described above.
+    wait for a phone photo and the 12-hour cache of Find an article results described above.
   </div>
 
   <h2>Fair-use limit and counts</h2>
@@ -110,8 +114,9 @@
     <li><code>activeTab</code> and <code>scripting</code> — to work on the tab where you clicked the icon: the marker, Whole page and Screenshot the page.</li>
     <li><code>sidePanel</code> — to open the extension next to the page.</li>
     <li><code>storage</code> — to keep your sheet in progress and your settings in your browser.</li>
-    <li>Optional access to <code>newsinlevels.com</code>, <code>learningenglish.voanews.com</code> and <code>simple.wikipedia.org</code> —
-      asked only when you first open one of them with <b>Find an article</b>, so the marker can start there by itself.</li>
+    <li>Optional access to <code>newsinlevels.com</code>, <code>learningenglish.voanews.com</code>, <code>simple.wikipedia.org</code>,
+      <code>en.wikipedia.org</code>, <code>en.wikibooks.org</code>, <code>en.wikinews.org</code>, <code>en.wikivoyage.org</code> and
+      <code>globalvoices.org</code> — asked only when you first use <b>Find an article</b>, so the marker can start on those sites by itself.</li>
   </ul>
 
   <h2>Usage counts</h2>
@@ -119,7 +124,8 @@
   <a href="https://policies.google.com/privacy">Google Analytics</a>, under a random number, not your name or email. Your texts, photos and
   worksheets are never sent there. The extension does not read other websites or your browsing history and does not follow you across websites.</p>
   <p>This random number is not the install number used for the fair-use limit, and the two are never linked. What is counted: installs,
-  opening the panel, downloads (format, where the text came from, exercise type, number of levels), your star rating, and AI features that
+  opening the panel, downloads (format, where the text came from, exercise type, number of levels), searches for an article (whether one
+  was found and on which site — never the topic), your star rating, and AI features that
   did not work.</p>
 
   <h2>Our web pages</h2>
